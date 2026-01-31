@@ -1,3 +1,0 @@
-hello foo (from func)
-hello bar (from func)
-hello baz (from func)
