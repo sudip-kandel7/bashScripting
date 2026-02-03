@@ -2,18 +2,14 @@
 
 array=(foo bar baz)
 
-echo "0: ${array[0]}"
-echo "1: ${array[1]}"
-echo "2: ${array[2]}"
-echo "3: ${array[3]}"
-echo "-1: ${array[-1]}"
+for item in "${array[*]}"; do
+	echo "item is: $item"
+done
 
+for item in "$array"; do
+	echo "item is: $item"
+done
 
-idx=2
-echo "idx: ${array[$idx]}"
-echo "idx: ${array[idx]}"
-echo
-
-echo "*: ${array[*]}"
-echo "@: ${array[@]}"
-
+for item in "${array[@]}"; do
+	echo "item is: $item"
+done
