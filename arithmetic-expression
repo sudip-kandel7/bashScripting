@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-i=0
-((i++))
+i=2
+((i >>= 5))
 
 echo "i = $i"
