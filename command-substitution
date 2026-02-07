@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+echo dollar-parens notation
+whoami
+echo "$(whoami)"
+echo "$(echo "$(whoami)")"
+echo "$(echo "$(echo "$(whoami)")")"
