@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 
-array=(foo bar baz)
+first_array=(
+	foo
+       	bar
+       	baz
+)
 
-for item in "${array[*]}"; do
-	echo "item is: $item"
+second_array=( "${first_array[@]}" suii )
+
+for item in "${second_array[@]}"; do 
+	echo "Item: $item"
 done
 
-for item in "$array"; do
-	echo "item is: $item"
-done
-
-for item in "${array[@]}"; do
-	echo "item is: $item"
-done

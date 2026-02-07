@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if ! declare -A arr; the
+	echo "uh oh, I couldn't make an associative array" >&2
+	exit 1
+fi
+
+arr[foo]=1
+arr[bar]=2
+arr[baz]=3
+
+echo "${arr[foo]}"
