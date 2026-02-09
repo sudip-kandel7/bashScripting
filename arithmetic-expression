@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-a=2
-b=3
+a=10
 
-((max = a > b ? a : b))
-
-echo "max = $max"
+if ((a % 2)); then
+	echo something
+else
+	echo something else
+fi
