@@ -1,3 +1,12 @@
 #!/usr/bin/env bash
 
+words=$(grep d ~/bashScripting/done/file.txt)
 
+i=0
+
+for word in $words; do
+	echo "$word"
+	((i++))
+done
+
+echo "found $i words"
