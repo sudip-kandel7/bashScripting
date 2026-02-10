@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+cmd=$1
+echo "script called with arguments: $*"
+shift
+echo "script shifted to arguments: $*"
+
+case "$cmd" in
+	indexed) 
+		process-indexed "$a"
+		;;
+	associative)
+		associative-indexed "$b"
+		;;
+	commands)
+		process-commands "$a"
+		;;
+	*)
+		echo "unkown cmd: $cmd" >&2
+		exit 1
+		;;
+esac
+
+process-indexed(){
+	local arguments=("$@")
+	echo "found: ${#associative[@]} total arguments"
+
+	local IFS=,
+	echo "${arguments[*]}"
+}
+
+process-associative(){
+	local arguments=("$@')
+	echo "found: ${#associative[@]} total arguments"
+
+	declare -A unique
+
+	for item in "${arguments[@]}"; do
+		unique[$item]=2
+	done 
+	echo "found: ${#unique[@]} unique arguments"
+}
+
+process-commands(){
+	local arguments=("@")
+	echo "found: ${#arguments[@]} total arguments"
+
+		for item in "{arguments[@]}"; do
+			echo "running command: $item"
+			"$item"
+		done 
+}
+
+

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+name=$(whoami)
+number=$(( 2 + 2 ))
+
+echo "My name is $name, number is $number"
+

@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 
-words=$(grep d ~/bashScripting/done/file.txt)
-
 i=0
-
-for word in $words; do
+while read -r word; do
 	echo "$word"
 	((i++))
-done
+done <  <(grep d ~/bashScripting/done/file.txt)
 
 echo "found $i words"
